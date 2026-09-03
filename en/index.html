@@ -1,0 +1,40 @@
+---
+layout: default
+lang: en
+title: "Polymarket Bot Research | BTC 5-Minute Backtesting, Risk & Execution"
+description: "Independent research on Polymarket bots, BTC 5-minute markets, backtesting, overfitting, no-trade logic, risk controls and production validation."
+alternate_url: /
+---
+<main>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">Prediction markets / quant research</div>
+        <h1>Polymarket bot research, <em>not a profit showcase.</em></h1>
+        <p class="hero-intro">Research notes from BTC 5-minute markets: why a strategy earns trust, why a rule gets rejected, and what still separates a backtest from a live trade.</p>
+        <p class="hero-principle">Publish the research process, not the strategy recipe.</p>
+        <div class="hero-actions"><a class="button dark" href="/en/articles/">Read research</a><a class="button light" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub project ↗</a></div>
+      </div>
+      <div class="snapshot">
+        <div class="snapshot-head"><div><span class="snapshot-label">Published research snapshot</span><strong>BTC 5m / 2021–2026</strong></div><span class="snapshot-badge">PUBLIC</span></div>
+        <div class="signal-field" aria-hidden="true"><svg viewBox="0 0 540 230"><path class="chart-grid" d="M0 46H540 M0 92H540 M0 138H540 M0 184H540"/><path class="chart-area" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48 L540,230 L0,230 Z"/><path class="chart-line" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48"/></svg></div>
+        <div class="snapshot-stats"><div><strong>18,633</strong><span>historical signals</span></div><div><strong>63.75%</strong><span>executed win rate*</span></div><div><strong>8</strong><span>longest loss streak</span></div></div>
+        <p class="snapshot-note">* Published historical replay snapshot, 2026-09-01. Standardized research evidence, not realized return.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="thesis-strip"><div class="shell thesis-grid"><span>01 / SIGNAL</span><p>A direction is a candidate, not an order.</p><span>02 / VALIDATION</span><p>No look-ahead does not automatically mean no overfitting.</p><span>03 / EXECUTION</span><p>A correct historical direction may still be untradeable at the real price.</p></div></section>
+
+  {% assign en_posts = site.posts | where: "lang", "en" %}{% assign featured = en_posts.first %}
+  <section class="section articles-section"><div class="shell"><div class="section-title-row"><div><div class="kicker">Latest research</div><h2>Recent work</h2></div><a href="/en/articles/" class="inline-link">All articles →</a></div>
+    {% if featured %}<a class="featured-article" href="{{ featured.url }}"><div class="featured-index">01</div><div class="featured-copy"><div class="article-meta">{{ featured.date | date: "%Y.%m.%d" }} / FEATURED</div><h3>{{ featured.title }}</h3><p>{{ featured.description }}</p></div><div class="featured-arrow">↗</div></a>{% endif %}
+    <div class="recent-grid">{% for post in en_posts offset:1 limit:5 %}<a class="recent-card" href="{{ post.url }}"><div class="article-meta">{{ post.date | date: "%Y.%m.%d" }}</div><h3>{{ post.title }}</h3><p>{{ post.description }}</p><span>Read →</span></a>{% endfor %}</div>
+  </div></section>
+
+  <section class="project-section"><div class="shell project-layout"><div class="project-copy"><div class="kicker inverse">Featured project</div><h2>Polymarket BTC 5m Bot</h2><p>An automated trading system for Polymarket BTC 5-minute Up / Down markets. High-level research methods, historical replay and risk boundaries are public; strategy-reconstructing formulas and parameters remain private.</p><div class="project-actions"><a class="button white" href="/en/project/">Project overview</a><a class="button ghost" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="project-ledger"><div><span>18,285</span><small>Executed historical orders</small></div><div><span>348</span><small>STOP decisions</small></div><div><span>-72</span><small>Max standardized drawdown</small></div><div><span>61</span><small>Positive monthly score buckets</small></div></div></div></section>
+
+  <section class="section method-section"><div class="shell"><div class="section-title-row"><div><div class="kicker">Method</div><h2>Questions we care about</h2></div><p class="section-side-copy">Attractive numbers can be public, but their limitations should be public too.</p></div><div class="method-grid"><a href="/en/articles/polymarket-bot-backtest-overfitting/"><b>01</b><h3>Causality ≠ Independence</h3><p>Chronological correctness prevents look-ahead; it does not erase research selection.</p></a><a href="/en/articles/polymarket-bot-replay-production-validation/"><b>02</b><h3>Research ≠ Production</h3><p>Matching totals can hide different event-level decisions, so production needs direct replay comparison.</p></a><a href="/en/articles/polymarket-btc-5m-resolution-source/"><b>03</b><h3>Price Data ≠ Resolution</h3><p>A strategy feed and the market's official resolution definition are not the same object.</p></a><a href="/en/articles/why-we-rejected-a-polymarket-bot-rule/"><b>04</b><h3>Improvement ≠ Ship</h3><p>A rule that looks good recently can still fail broader acceptance tests.</p></a></div></div></section>
+
+  <section class="disclaimer-strip"><div class="shell disclaimer-grid"><strong>Research, not promises.</strong><p>This site is for technical research, education and information only. Historical, backtested or simulated results do not guarantee future performance.</p></div></section>
+</main>

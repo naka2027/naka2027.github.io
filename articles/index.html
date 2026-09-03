@@ -1,0 +1,11 @@
+---
+layout: default
+lang: zh
+title: "Polymarket Bot 研究文章 | 回测、策略、风控与 BTC 5分钟"
+description: "完整 Polymarket 机器人研究归档：BTC 5分钟、策略回测、胜率、过拟合、STOP、生产验证、结算源与实盘执行。"
+alternate_url: /en/articles/
+---
+<main class="archive-page">
+  <section class="archive-hero"><div class="shell"><div class="kicker">Research archive</div><h1>研究文章</h1><p>围绕 Polymarket Bot、BTC 5分钟市场、回测真实性、风控和自动执行的持续研究记录。</p></div></section>
+  <section class="archive-list"><div class="shell">{% assign posts = site.posts | where: "lang", "zh" %}{% for post in posts %}<a class="archive-row" href="{{ post.url }}"><div class="archive-date">{{ post.date | date: "%Y.%m.%d" }}</div><div><h2>{{ post.title }}</h2><p>{{ post.description }}</p>{% if post.tags %}<div class="tag-row">{% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}</div><div class="archive-arrow">↗</div></a>{% endfor %}</div></section>
+</main>

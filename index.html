@@ -1,0 +1,101 @@
+---
+layout: default
+lang: zh
+title: "Polymarket 机器人研究 | BTC 5分钟自动交易、回测与策略验证"
+description: "独立记录 Polymarket 机器人、BTC 5分钟自动交易、策略回测、过拟合、STOP、风控与生产代码验证。公开研究过程，不公开策略配方。"
+alternate_url: /en/
+---
+<main>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">Prediction markets / quant research</div>
+        <h1>Polymarket 机器人研究，<em>不是收益展示页。</em></h1>
+        <p class="hero-intro">从 BTC 5分钟市场出发，公开记录策略为什么被相信、为什么被否定，以及回测与真实执行之间还差什么。</p>
+        <p class="hero-principle">公开研究过程，不公开策略配方。</p>
+        <div class="hero-actions">
+          <a class="button dark" href="/articles/">阅读研究</a>
+          <a class="button light" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub 项目 ↗</a>
+        </div>
+      </div>
+      <div class="snapshot">
+        <div class="snapshot-head">
+          <div><span class="snapshot-label">Published research snapshot</span><strong>BTC 5m / 2021–2026</strong></div>
+          <span class="snapshot-badge">PUBLIC</span>
+        </div>
+        <div class="signal-field" aria-hidden="true">
+          <svg viewBox="0 0 540 230">
+            <path class="chart-grid" d="M0 46H540 M0 92H540 M0 138H540 M0 184H540"/>
+            <path class="chart-area" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48 L540,230 L0,230 Z"/>
+            <path class="chart-line" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48"/>
+          </svg>
+        </div>
+        <div class="snapshot-stats">
+          <div><strong>18,633</strong><span>historical signals</span></div>
+          <div><strong>63.75%</strong><span>executed win rate*</span></div>
+          <div><strong>8</strong><span>longest loss streak</span></div>
+        </div>
+        <p class="snapshot-note">* 2026-09-01 公开历史回放快照。标准化研究结果，不等于实盘收益。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="thesis-strip">
+    <div class="shell thesis-grid">
+      <span>01 / SIGNAL</span><p>一个方向判断只是候选，不是订单。</p>
+      <span>02 / VALIDATION</span><p>没有偷看未来，也不代表没有过拟合。</p>
+      <span>03 / EXECUTION</span><p>历史方向正确，不代表真实价格一定可成交。</p>
+    </div>
+  </section>
+
+  {% assign zh_posts = site.posts | where: "lang", "zh" %}
+  {% assign featured = zh_posts.first %}
+  <section class="section articles-section">
+    <div class="shell">
+      <div class="section-title-row"><div><div class="kicker">Latest research</div><h2>最近研究</h2></div><a href="/articles/" class="inline-link">全部文章 →</a></div>
+      {% if featured %}
+      <a class="featured-article" href="{{ featured.url }}">
+        <div class="featured-index">01</div>
+        <div class="featured-copy"><div class="article-meta">{{ featured.date | date: "%Y.%m.%d" }} / FEATURED</div><h3>{{ featured.title }}</h3><p>{{ featured.description }}</p></div>
+        <div class="featured-arrow">↗</div>
+      </a>
+      {% endif %}
+      <div class="recent-grid">
+        {% for post in zh_posts offset:1 limit:5 %}
+        <a class="recent-card" href="{{ post.url }}"><div class="article-meta">{{ post.date | date: "%Y.%m.%d" }}</div><h3>{{ post.title }}</h3><p>{{ post.description }}</p><span>阅读 →</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="shell project-layout">
+      <div class="project-copy">
+        <div class="kicker inverse">Featured project</div>
+        <h2>Polymarket BTC 5m Bot</h2>
+        <p>围绕 Polymarket BTC 5分钟 Up / Down 市场构建的自动化交易系统。公开高层研究方法、历史回放和风险边界；核心策略公式与参数保持私有。</p>
+        <div class="project-actions"><a class="button white" href="/project/">项目说明</a><a class="button ghost" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      </div>
+      <div class="project-ledger">
+        <div><span>18,285</span><small>Executed historical orders</small></div>
+        <div><span>348</span><small>STOP decisions</small></div>
+        <div><span>-72</span><small>Max standardized drawdown</small></div>
+        <div><span>61</span><small>Positive monthly score buckets</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section method-section">
+    <div class="shell">
+      <div class="section-title-row"><div><div class="kicker">Method</div><h2>我们更关注这些问题</h2></div><p class="section-side-copy">漂亮数字可以公开，但必须和它的限制一起公开。</p></div>
+      <div class="method-grid">
+        <a href="/articles/polymarket-bot-backtest-overfitting/"><b>01</b><h3>Causality ≠ Independence</h3><p>因果正确只解决“有没有偷看未来”，不自动解决历史选择与过拟合。</p></a>
+        <a href="/articles/polymarket-bot-replay-production-validation/"><b>02</b><h3>Research ≠ Production</h3><p>总指标相同也可能隐藏逐笔决策偏差，因此生产代码需要 event-level 对照。</p></a>
+        <a href="/articles/polymarket-btc-5m-resolution-source/"><b>03</b><h3>Price Data ≠ Resolution</h3><p>策略行情源和市场官方结算定义不是一回事，标签边界必须被单独检查。</p></a>
+        <a href="/articles/why-we-rejected-a-polymarket-bot-rule/"><b>04</b><h3>Improvement ≠ Ship</h3><p>最近表现漂亮的新规则，也可能在更完整的验证里被否决。</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="disclaimer-strip"><div class="shell disclaimer-grid"><strong>Research, not promises.</strong><p>本站用于技术研究、教育和信息记录，不构成投资或财务建议。历史、回测或模拟结果均不保证未来表现。</p></div></section>
+</main>

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<main class="post-page">
+  <article class="post shell-narrow">
+    <header class="post-header">
+      <div class="eyebrow-row">
+        <div class="kicker">{% if page.lang == 'en' %}Research note{% else %}研究文章{% endif %}</div>
+        <div class="issue-mark">N / {{ page.date | date: "%y%m%d" }}</div>
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="post-deck">{{ page.description }}</p>{% endif %}
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        {% if page.tags %}<span>•</span><span>{{ page.tags | join: " / " }}</span>{% endif %}
+      </div>
+    </header>
+
+    <div class="post-body">{{ content }}</div>
+
+    <aside class="post-cta">
+      <div>
+        <span class="mini-label">{% if page.lang == 'en' %}Project{% else %}项目{% endif %}</span>
+        <strong>Polymarket BTC 5m Bot</strong>
+        <p>{% if page.lang == 'en' %}Public documentation, releases and backtest methodology are maintained on GitHub.{% else %}公开文档、版本与回测方法持续维护在 GitHub。{% endif %}</p>
+      </div>
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer" class="button dark">{% if page.lang == 'en' %}View GitHub ↗{% else %}查看 GitHub ↗{% endif %}</a>
+    </aside>
+
+    <footer class="post-end">
+      {% assign translations = site.posts | where: "translation_key", page.translation_key %}
+      {% for translated_post in translations %}
+        {% if translated_post.lang != page.lang %}
+          <a href="{{ translated_post.url }}" class="inline-link">{% if page.lang == 'en' %}阅读中文版 →{% else %}Read in English →{% endif %}</a>
+        {% endif %}
+      {% endfor %}
+      <a href="{% if page.lang == 'en' %}/en/articles/{% else %}/articles/{% endif %}" class="inline-link">{% if page.lang == 'en' %}All research notes →{% else %}全部研究文章 →{% endif %}</a>
+    </footer>
+  </article>
+</main>
