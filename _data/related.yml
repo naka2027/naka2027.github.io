@@ -118,3 +118,27 @@ why-i-rejected-higher-backtest-return:
 - why-i-abandoned-smooth-risk-control
 - high-leverage-is-not-just-multiplication
 - trading-bot-is-not-just-a-signal-strategy
+how-to-evaluate-trading-bot-upgrade:
+- polymarket-bot-replay-production-validation
+- polymarket-bot-backtest-overfitting
+- polymarket-bot-win-rate-entry-price-expected-value
+more-trades-smaller-drawdown-btc5m:
+- why-polymarket-bot-needs-no-trade
+- polymarket-btc5m-bot-strategy-stability
+- polymarket-bot-win-rate-entry-price-expected-value
+simplifying-trading-bot-decision-architecture:
+- building-polymarket-btc5m-bot
+- polynexus-maintainable-trading-system
+- polymarket-bot-replay-production-validation
+positive-months-weak-recent-week:
+- polymarket-bot-monthly-stability
+- polymarket-btc5m-bot-strategy-stability
+- polymarket-bot-small-sample-five-year-validation
+trading-bot-upgrade-invariants-production-replay:
+- polymarket-bot-replay-production-validation
+- polymarket-bot-backtest-overfitting
+- building-polymarket-btc5m-bot
+rule-scoped-data-dependencies-automation:
+- polynexus-maintainable-trading-system
+- why-polymarket-bot-needs-no-trade
+- building-polymarket-btc5m-bot

@@ -34,6 +34,9 @@
   - polymarket-bot-win-rate-entry-price-expected-value
   - why-polymarket-bot-cannot-simply-run-earlier
   - polymarket-bot-61-positive-months-stability
+  - how-to-evaluate-trading-bot-upgrade
+  - more-trades-smaller-drawdown-btc5m
+  - positive-months-weak-recent-week
   start_key: polymarket-bot-win-rate-entry-price-expected-value
   deep_key: polymarket-bot-backtest-overfitting
   case_key: polymarket-bot-replay-production-validation
@@ -45,6 +48,8 @@
     - polymarket-bot-monthly-stability
     - polymarket-bot-five-year-replay-stability
     - polymarket-bot-61-positive-months-stability
+    - more-trades-smaller-drawdown-btc5m
+    - positive-months-weak-recent-week
   - zh: 回测方法与生产一致性
     en: Backtest Methods & Production Replay
     posts:
@@ -52,6 +57,7 @@
     - polymarket-bot-replay-production-validation
     - polymarket-bot-small-sample-five-year-validation
     - why-we-rejected-a-polymarket-bot-rule
+    - how-to-evaluate-trading-bot-upgrade
   - zh: 入场价格与执行时点
     en: Entry Prices & Execution Timing
     posts:
@@ -74,6 +80,9 @@
   - building-polymarket-btc5m-bot
   - polynexus-maintainable-trading-system
   - nuitka-compiled-frame-segfault
+  - simplifying-trading-bot-decision-architecture
+  - trading-bot-upgrade-invariants-production-replay
+  - rule-scoped-data-dependencies-automation
   start_key: building-polymarket-btc5m-bot
   deep_key: polynexus-maintainable-trading-system
   case_key: nuitka-compiled-frame-segfault
