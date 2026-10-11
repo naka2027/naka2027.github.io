@@ -2,7 +2,7 @@ title: "Naka Research | Polymarket Bot & BTC 5m"
 description: "Polymarket 机器人、Polymarket Trading Bot、BTC 5分钟自动交易、策略回测、过拟合、风控与执行研究。"
 url: "https://naka2027.github.io"
 baseurl: ""
-repository: "naka2027/polymarket-bot"
+repository: "naka2027/naka2027.github.io"
 github_url: "https://github.com/naka2027/polymarket-bot"
 markdown: kramdown
 highlighter: rouge
@@ -16,3 +16,7 @@ exclude:
   - README.md
   - README-DEPLOY.md
   - CONTENT-NOTES.md
+  - BLOG-OPTIMIZATION-NOTES.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

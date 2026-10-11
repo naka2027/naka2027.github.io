@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main class="post-page">
+<main id="main-content" class="post-page">
   <article class="post shell-narrow">
     <header class="post-header">
       <div class="eyebrow-row">
@@ -12,21 +12,40 @@ layout: default
       {% if page.description %}<p class="post-deck">{{ page.description }}</p>{% endif %}
       <div class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        {% if page.last_modified_at %}<span>•</span><span>{% if page.lang == 'en' %}Updated{% else %}更新于{% endif %} {{ page.last_modified_at | date: "%Y-%m-%d" }}</span>{% endif %}
         {% if page.tags %}<span>•</span><span>{{ page.tags | join: " / " }}</span>{% endif %}
       </div>
     </header>
 
     <div class="post-body">{{ content }}</div>
 
-    <aside class="post-cta">
-      <div>
-        <span class="mini-label">{% if page.lang == 'en' %}Project{% else %}项目{% endif %}</span>
-        <strong>Polymarket BTC 5m Bot</strong>
-        <p>{% if page.lang == 'en' %}Public documentation, releases and backtest methodology are maintained on GitHub.{% else %}公开文档、版本与回测方法持续维护在 GitHub。{% endif %}</p>
-      </div>
-      <a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer" class="button dark">{% if page.lang == 'en' %}View GitHub ↗{% else %}查看 GitHub ↗{% endif %}</a>
-    </aside>
-
+    {% for topic in site.data.topics %}
+      {% if topic.posts contains page.translation_key %}
+      <aside class="post-related">
+        <div class="mini-label">{% if page.lang == 'en' %}Continue exploring{% else %}继续探索{% endif %}</div>
+        <h2>{% if page.lang == 'en' %}{{ topic.en }}{% else %}{{ topic.zh }}{% endif %}</h2>
+        <p>{% if page.lang == 'en' %}{{ topic.summary_en }}{% else %}{{ topic.summary_zh }}{% endif %}</p>
+        <div class="post-related-links">
+        {% assign curated_keys = site.data.related[page.translation_key] %}
+        {% if curated_keys %}
+          {% assign suggested_keys = curated_keys %}
+        {% else %}
+          {% assign suggested_keys = topic.posts %}
+        {% endif %}
+        {% assign related_count = 0 %}
+        {% for key in suggested_keys %}
+        {% if key != page.translation_key and related_count < 3 %}
+          {% assign related_posts = site.posts | where: 'translation_key', key %}
+          {% for related in related_posts %}
+          {% if related.lang == page.lang %}<a href="{{ related.url }}">{{ related.title }} ↗</a>{% assign related_count = related_count | plus: 1 %}{% endif %}
+          {% endfor %}
+        {% endif %}
+        {% endfor %}
+        </div>
+        <div class="post-related-more"><a class="inline-link" href="{% if page.lang == 'en' %}/en/topics/#{% else %}/topics/#{% endif %}{{ topic.id }}">{% if page.lang == 'en' %}Explore this topic{% else %}查看完整专题{% endif %} →</a><a class="inline-link" href="{% if page.lang == 'en' %}/en/questions/{% else %}/questions/{% endif %}">{% if page.lang == 'en' %}Common questions{% else %}相关常见问题{% endif %} →</a></div>
+      </aside>
+      {% endif %}
+    {% endfor %}
     <footer class="post-end">
       {% assign translations = site.posts | where: "translation_key", page.translation_key %}
       {% for translated_post in translations %}

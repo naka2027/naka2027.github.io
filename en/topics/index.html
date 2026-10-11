@@ -1,0 +1,36 @@
+---
+layout: default
+lang: en
+title: "Research Topics | Polymarket Data, Backtesting, Engineering & BTC Futures"
+description: "Explore market mechanics, backtests, execution, automation engineering and separate BTC futures research by topic."
+alternate_url: /topics/
+---
+<main id="main-content" class="knowledge-page">
+ <section class="archive-hero"><div class="shell"><div class="kicker">Research topic library</div><h1>Explore research by question and topic</h1><p>Existing research organized into four themes. Original articles and URLs remain intact; find an answer by topic instead of publication date.</p></div></section>
+ <section class="section"><div class="shell">
+  <div class="topic-tiles">{% for topic in site.data.topics %}<a class="topic-tile" href="#{{ topic.id }}"><span class="mini-label">0{{ forloop.index }} / topic</span><h2>{% if page.lang == 'en' %}{{ topic.en }}{% else %}{{ topic.zh }}{% endif %}</h2><p>{% if page.lang == 'en' %}{{ topic.summary_en }}{% else %}{{ topic.summary_zh }}{% endif %}</p><span class="topic-arrow">↗</span></a>{% endfor %}</div>
+ </div></section>
+ {% for topic in site.data.topics %}
+ <section id="{{ topic.id }}" class="section topic-section"><div class="shell"><div class="section-title-row"><div><div class="kicker">0{{ forloop.index }} / Topic</div><h2>{% if page.lang == 'en' %}{{ topic.en }}{% else %}{{ topic.zh }}{% endif %}</h2></div><p class="section-side-copy">{% if page.lang == 'en' %}{{ topic.summary_en }}{% else %}{{ topic.summary_zh }}{% endif %}</p></div>
+  <div class="topic-reading-path">
+    <div class="mini-label">Suggested reading path</div>
+    <div class="reading-steps">
+      {% assign route_keys = topic.start_key | append: ',' | append: topic.deep_key | append: ',' | append: topic.case_key | split: ',' %}
+      {% for key in route_keys %}{% assign route_step = forloop.index %}{% assign route_posts = site.posts | where: 'translation_key', key %}{% for note in route_posts %}{% if note.lang == page.lang %}
+      <a href="{{ note.url }}"><span>0{{ route_step }} / {% if route_step == 1 %}Start{% elsif route_step == 2 %}Go deeper{% else %}Case study{% endif %}</span><strong>{{ note.title }}</strong> ↗</a>
+      {% endif %}{% endfor %}{% endfor %}
+    </div>
+  </div>
+  {% if topic.groups %}
+  <div class="topic-subgroups"><h3>Browse by research question</h3>
+  {% for subgroup in topic.groups %}<div class="topic-subgroup"><h4>{% if page.lang == 'en' %}{{ subgroup.en }}{% else %}{{ subgroup.zh }}{% endif %}</h4><div class="topic-subgroup-links">
+   {% for key in subgroup.posts %}{% assign note_pairs = site.posts | where: 'translation_key', key %}{% for note in note_pairs %}{% if note.lang == page.lang %}<a href="{{ note.url }}">{{ note.title }} ↗</a>{% endif %}{% endfor %}{% endfor %}
+  </div></div>{% endfor %}</div>
+  {% endif %}
+  <h3 class="topic-all-heading">All articles in this topic</h3>
+  <div class="topic-posts">
+  {% for key in topic.posts %}{% assign related_posts = site.posts | where: 'translation_key', key %}{% for post in related_posts %}{% if post.lang == page.lang %}<a href="{{ post.url }}"><span class="article-meta">{{ post.date | date: '%Y.%m.%d' }}</span><strong>{{ post.title }}</strong><span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}{% endfor %}
+  </div>
+ </div></section>
+ {% endfor %}
+</main>

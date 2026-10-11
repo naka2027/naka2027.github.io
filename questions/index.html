@@ -1,0 +1,38 @@
+---
+layout: default
+lang: zh
+title: "Polymarket BTC 5m 常见问题 | 自动交易、回测、数据与部署"
+description: "12 个关于 Polymarket BTC 5分钟机器人、Windows/Linux 部署、模拟与实盘、结算数据、回测验证和安全的直接回答。"
+alternate_url: /en/questions/
+---
+<main id="main-content" class="knowledge-page">
+  <section class="archive-hero"><div class="shell"><div class="kicker">Practical questions / answers</div><h1>从真实问题开始</h1><p>不了解项目名称也没关系。先找到你关心的问题，直接得到基本答案，再按需阅读研究和操作文档。</p>
+   <div class="knowledge-jump"><a class="button dark" href="#start">浏览问题</a><a class="button light" href="/topics/">浏览专题</a><a class="button light" href="/guides/">实用指南</a><a class="button light" href="{{ site.github_url }}/blob/main/docs/zh-CN/faq.md" target="_blank" rel="noopener noreferrer">GitHub FAQ ↗</a></div>
+  </div></section>
+  <div class="shell knowledge-layout">
+    <aside class="knowledge-sidebar" aria-label="Question categories"><div class="mini-label">分类导航</div>
+      {% for group in site.data.questions %}<a href="#{{ group.id }}">{% if page.lang == 'en' %}{{ group.en }}{% else %}{{ group.zh }}{% endif %}</a>{% endfor %}
+    </aside>
+    <div class="knowledge-content">
+    <div class="search-panel"><label for="question-search">查找问题</label><input id="question-search" type="search" data-filter-input="questions" placeholder="例如：模拟、实盘、价格、安装……" autocomplete="off" aria-controls="question-list"><p class="filter-count" data-filter-count="questions" aria-live="polite"></p></div>
+    <div id="question-list">
+    {% for group in site.data.questions %}
+      <section id="{{ group.id }}" class="question-group" data-question-group><div class="kicker">0{{ forloop.index }} / Questions</div><h2>{% if page.lang == 'en' %}{{ group.en }}{% else %}{{ group.zh }}{% endif %}</h2>
+        {% for question in group.questions %}
+        <article id="{{ question.id }}" class="question-item" data-filter-item="questions" data-search-text="{{ question.zh | append: ' ' | append: question.en | append: ' ' | append: question.answer_zh | append: ' ' | append: question.answer_en | escape }}"><div class="question-label">{{ question.id | upcase }}</div><h3>{% if page.lang == 'en' %}{{ question.en }}{% else %}{{ question.zh }}{% endif %}</h3>
+          <p>{% if page.lang == 'en' %}{{ question.answer_en }}{% else %}{{ question.answer_zh }}{% endif %}</p>
+          <div class="question-links">
+            {% if question.guide_slug %}<a href="/guides/{{ question.guide_slug }}/">查看完整指南 ↗</a>{% endif %}
+            {% if question.article_key %}{% assign matching_posts = site.posts | where: 'translation_key', question.article_key %}{% for linked in matching_posts %}{% if linked.lang == page.lang %}<a href="{{ linked.url }}">{% if page.lang == 'en' %}Detailed research{% else %}阅读相关研究{% endif %} ↗</a>{% endif %}{% endfor %}{% endif %}
+            <a href="{{ site.github_url }}/blob/main/docs/zh-CN/faq.md#{{ question.github_faq_anchor_zh }}" target="_blank" rel="noopener noreferrer">{% if page.lang == 'en' %}Product FAQ{% else %}软件 FAQ{% endif %} ↗</a>
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+    {% endfor %}
+    </div>
+    <p class="filter-empty" data-filter-empty="questions" hidden>未找到匹配的问题，可更换关键词或查看完整分类。</p>
+    <p class="knowledge-caution">这里提供研究与概念性解释。具体软件下载、账户配置和安全操作始终以对应版本的 GitHub 文档为准；所有交易都有风险。</p>
+    </div>
+  </div>
+</main>

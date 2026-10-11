@@ -18,8 +18,6 @@ tags:
   - System Reliability
 ---
 
-# Random SIGSEGV After Nuitka Compilation: Tracing a Python 3.11+ Frame Use-After-Free
-
 Some of the hardest production failures do not leave a useful Python exception at all. The process simply disappears.
 
 We recently ran into one while maintaining a long-running Python automated trading client. After upgrading a unified SDK, the application's normal tests continued to pass. Stress tests under regular CPython on Windows and WSL did not reproduce the failure either. Yet the Nuitka-compiled Linux application began crashing at unpredictable times, sometimes only after hours of normal operation.

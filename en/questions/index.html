@@ -1,0 +1,38 @@
+---
+layout: default
+lang: en
+title: "Polymarket BTC 5m Questions | Bots, Backtests, Data & Deployment"
+description: "Clear answers about Polymarket BTC five-minute bots, deployment, paper vs live trading, settlement data, backtesting and safety."
+alternate_url: /questions/
+---
+<main id="main-content" class="knowledge-page">
+  <section class="archive-hero"><div class="shell"><div class="kicker">Practical questions / answers</div><h1>Start with the real questions</h1><p>You do not need to know the project name. Start with your question, get a direct answer, and go deeper only when useful.</p>
+   <div class="knowledge-jump"><a class="button dark" href="#start">Browse questions</a><a class="button light" href="/en/topics/">Explore topics</a><a class="button light" href="/en/guides/">Practical guides</a><a class="button light" href="{{ site.github_url }}/blob/main/docs/en/faq.md" target="_blank" rel="noopener noreferrer">GitHub FAQ ↗</a></div>
+  </div></section>
+  <div class="shell knowledge-layout">
+    <aside class="knowledge-sidebar" aria-label="Question categories"><div class="mini-label">Jump to a topic</div>
+      {% for group in site.data.questions %}<a href="#{{ group.id }}">{% if page.lang == 'en' %}{{ group.en }}{% else %}{{ group.zh }}{% endif %}</a>{% endfor %}
+    </aside>
+    <div class="knowledge-content">
+    <div class="search-panel"><label for="question-search">Find a question</label><input id="question-search" type="search" data-filter-input="questions" placeholder="Try paper, live, settlement, install…" autocomplete="off" aria-controls="question-list"><p class="filter-count" data-filter-count="questions" aria-live="polite"></p></div>
+    <div id="question-list">
+    {% for group in site.data.questions %}
+      <section id="{{ group.id }}" class="question-group" data-question-group><div class="kicker">0{{ forloop.index }} / Questions</div><h2>{% if page.lang == 'en' %}{{ group.en }}{% else %}{{ group.zh }}{% endif %}</h2>
+        {% for question in group.questions %}
+        <article id="{{ question.id }}" class="question-item" data-filter-item="questions" data-search-text="{{ question.zh | append: ' ' | append: question.en | append: ' ' | append: question.answer_zh | append: ' ' | append: question.answer_en | escape }}"><div class="question-label">{{ question.id | upcase }}</div><h3>{% if page.lang == 'en' %}{{ question.en }}{% else %}{{ question.zh }}{% endif %}</h3>
+          <p>{% if page.lang == 'en' %}{{ question.answer_en }}{% else %}{{ question.answer_zh }}{% endif %}</p>
+          <div class="question-links">
+            {% if question.guide_slug %}<a href="/en/guides/{{ question.guide_slug }}/">Step-by-step guide ↗</a>{% endif %}
+            {% if question.article_key %}{% assign matching_posts = site.posts | where: 'translation_key', question.article_key %}{% for linked in matching_posts %}{% if linked.lang == page.lang %}<a href="{{ linked.url }}">{% if page.lang == 'en' %}Detailed research{% else %}阅读相关研究{% endif %} ↗</a>{% endif %}{% endfor %}{% endif %}
+            <a href="{{ site.github_url }}/blob/main/docs/en/faq.md#{{ question.github_faq_anchor_en }}" target="_blank" rel="noopener noreferrer">{% if page.lang == 'en' %}Product FAQ{% else %}软件 FAQ{% endif %} ↗</a>
+          </div>
+        </article>
+        {% endfor %}
+      </section>
+    {% endfor %}
+    </div>
+    <p class="filter-empty" data-filter-empty="questions" hidden>No questions found. Try another word or browse categories.</p>
+    <p class="knowledge-caution">These answers explain concepts and research. For downloads, account settings, and safety-critical operations, follow version-specific GitHub documentation. Trading involves risk.</p>
+    </div>
+  </div>
+</main>

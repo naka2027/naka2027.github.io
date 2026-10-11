@@ -17,8 +17,6 @@ tags:
   - System Architecture
 ---
 
-# A Futures Trading Bot Is Not Just a Signal Strategy
-
 When people talk about trading bots, the discussion usually starts with:
 
 > Which indicator do you use?  

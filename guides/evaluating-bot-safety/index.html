@@ -1,0 +1,24 @@
+---
+layout: default
+lang: zh
+title: "如何判断 Polymarket 交易机器人是否可信？ | Naka Research"
+description: "从下载来源、私钥与 API 权限、模拟和实盘证据、资金风险、更新与运维等方面核查第三方机器人。"
+alternate_url: /en/guides/evaluating-bot-safety/
+permalink: /guides/evaluating-bot-safety/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">实用指南 / Naka Research</div><h1>如何判断 Polymarket 交易机器人是否可信？</h1><p class="post-deck">判断一个交易机器人是否值得尝试，不应从胜率截图开始。首先要区分“软件能正常运行”“策略在历史中表现好”和“真实账户能可靠执行”。</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>1. 确认软件从哪里来</h2><p>优先查看可核验的仓库、版本历史、下载链接和签名或完整性校验说明。公开仓库不意味着全部源代码开源；如果提供成品程序，应明确说明源码开放范围与授权。</p></section>
+<section class="guide-section"><h2>2. 弄清凭据和资金边界</h2><p>问清楚私钥和 API Key 在哪台设备保存、如何加密、签名在哪里发生、谁能访问管理面板。自托管不等于没有风险：设备被入侵、权限过宽、意外订单和丢失备份都可能造成损失。切勿向陌生人发送助记词或密钥。</p></section>
+<section class="guide-section"><h2>3. 分开看回测、Paper 与 Live</h2><p>历史回放、模拟订单和真实成交具有不同的证据价值。胜率必须与入场价格、费用、滑点、参与频率、回撤及真实成交记录一起理解。仅凭单张收益截图，不足以判断长期结果。</p></section>
+<section class="guide-section"><h2>4. 检查故障与退出流程</h2><p>正常运行时的表现只是部分证据。还要了解断网、重启、版本迁移以及停止程序时，外部挂单和仓位应如何核对；不要默认关闭浏览器会自动撤单。</p></section>
+<section class="guide-section"><h2>5. 核对地区与官方关系</h2><p>第三方机器人不是 Polymarket 官方背书。请核实所在地区是否合法使用对应市场与平台，避免任何号称能够绕过账户或地域限制的宣传。</p></section>
+    <section class="guide-summary"><h2>简要结论</h2><p>可信度不是一个数字，而是一组可核对事实：来源、权限、验证范围、风险边界、维护能力和透明的局限。</p></section>
+    <p class="guide-disclaimer">本文用于技术与研究交流，不构成投资建议。产品设置和支持范围请以最新发行版本与 GitHub 官方仓库文档为准。</p>
+  </div>
+  <aside class="guide-links"><h2>继续了解</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/faq.md#q22-软件是否保管我的资金私钥和-api-key-存放在哪里" target="_blank" rel="noopener noreferrer">凭据与安全 FAQ ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/operations-security.md" target="_blank" rel="noopener noreferrer">运行维护与故障恢复 ↗</a><a href="/guides/backtest-vs-live/">历史回测与实盘差异 ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/questions/">查看全部常见问题 →</a></div>
+ </article>
+</main>

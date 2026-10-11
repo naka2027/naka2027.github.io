@@ -1,0 +1,94 @@
+- id: market
+  zh: Polymarket 市场机制与数据
+  en: Polymarket Markets & Data
+  summary_zh: 了解 BTC 5 分钟市场、结算参考价格、盘口和数据差异。
+  summary_en: Understand BTC five-minute markets, settlement references, order books, and data differences.
+  posts:
+  - polymarket-btc-5m-resolution-source
+  - polymarket-chainlink-btc5m-research-difficulty
+  - polymarket-bot-binance-twap60-divergence
+  - polymarket-btc5m-twap60-proxy-validation
+  - five-years-btc-1s-data-polymarket-research
+  - polymarket-orderbook-jumps-btc-twap-execution
+  start_key: polymarket-btc-5m-resolution-source
+  deep_key: polymarket-chainlink-btc5m-research-difficulty
+  case_key: polymarket-btc5m-twap60-proxy-validation
+- id: validation
+  zh: 回测、风险与执行验证
+  en: Backtesting, Risk & Execution
+  summary_zh: 研究胜率、入场价格、过拟合、长期稳定性和实盘偏差。
+  summary_en: Explore win rates, entry prices, overfitting, stability, and live execution gaps.
+  posts:
+  - why-polymarket-bot-strategies-fail
+  - polymarket-bot-monthly-stability
+  - polymarket-bot-replay-production-validation
+  - why-we-rejected-a-polymarket-bot-rule
+  - polymarket-bot-backtest-overfitting
+  - why-polymarket-bot-needs-no-trade
+  - polymarket-bot-backtest-win-rate
+  - polymarket-btc5m-bot-strategy-stability
+  - polymarket-bot-five-year-replay-stability
+  - polymarket-bot-early-entry-final-confirmation
+  - polymarket-bot-entry-cost-near-market-open
+  - polymarket-bot-small-sample-five-year-validation
+  - polymarket-bot-win-rate-entry-price-expected-value
+  - why-polymarket-bot-cannot-simply-run-earlier
+  - polymarket-bot-61-positive-months-stability
+  start_key: polymarket-bot-win-rate-entry-price-expected-value
+  deep_key: polymarket-bot-backtest-overfitting
+  case_key: polymarket-bot-replay-production-validation
+  groups:
+  - zh: 历史稳定性与样本
+    en: Historical Stability & Samples
+    posts:
+    - why-polymarket-bot-strategies-fail
+    - polymarket-bot-monthly-stability
+    - polymarket-bot-five-year-replay-stability
+    - polymarket-bot-61-positive-months-stability
+  - zh: 回测方法与生产一致性
+    en: Backtest Methods & Production Replay
+    posts:
+    - polymarket-bot-backtest-overfitting
+    - polymarket-bot-replay-production-validation
+    - polymarket-bot-small-sample-five-year-validation
+    - why-we-rejected-a-polymarket-bot-rule
+  - zh: 入场价格与执行时点
+    en: Entry Prices & Execution Timing
+    posts:
+    - polymarket-bot-backtest-win-rate
+    - polymarket-bot-win-rate-entry-price-expected-value
+    - polymarket-bot-entry-cost-near-market-open
+    - polymarket-bot-early-entry-final-confirmation
+    - why-polymarket-bot-cannot-simply-run-earlier
+  - zh: 参与决策与研究总结
+    en: Participation Decisions & Findings
+    posts:
+    - why-polymarket-bot-needs-no-trade
+    - polymarket-btc5m-bot-strategy-stability
+- id: engineering
+  zh: 自动化系统与工程实践
+  en: Trading Automation & Engineering
+  summary_zh: 从信号到执行，以及部署、更新、异常恢复和工程排障。
+  summary_en: From signals to execution, deployment, updating, recovery, and debugging.
+  posts:
+  - building-polymarket-btc5m-bot
+  - polynexus-maintainable-trading-system
+  - nuitka-compiled-frame-segfault
+  start_key: building-polymarket-btc5m-bot
+  deep_key: polynexus-maintainable-trading-system
+  case_key: nuitka-compiled-frame-segfault
+- id: futures
+  zh: 独立 BTC 合约研究
+  en: Separate BTC Futures Research
+  summary_zh: 独立研究 Binance 信号与 OKX 执行、风险和杠杆；不与 Polymarket 策略混同。
+  summary_en: Separate research on Binance signals, OKX execution, leverage and risk; not the Polymarket strategy.
+  posts:
+  - binance-signal-okx-execution
+  - high-leverage-is-not-just-multiplication
+  - trading-bot-is-not-just-a-signal-strategy
+  - why-binance-signals-okx-execution
+  - why-i-abandoned-smooth-risk-control
+  - why-i-rejected-higher-backtest-return
+  start_key: why-binance-signals-okx-execution
+  deep_key: high-leverage-is-not-just-multiplication
+  case_key: why-i-rejected-higher-backtest-return

@@ -18,8 +18,6 @@ tags:
   - Windows
 ---
 
-# From a Trading Bot to a Maintainable Trading System
-
 When building an automated trading system, most attention naturally goes to the strategy:
 
 - Are the signals stable?

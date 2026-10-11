@@ -1,0 +1,23 @@
+---
+layout: default
+lang: zh
+title: "Polymarket Paper 模拟交易与 Live 实盘有什么区别？ | Naka Research"
+description: "解释 Polymarket BTC 5分钟机器人中的 Paper 和 Live 模式，以及成交、费用、滑点、订单状态与风险差异。"
+alternate_url: /en/guides/paper-vs-live/
+permalink: /guides/paper-vs-live/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">实用指南 / Naka Research</div><h1>Polymarket Paper 模拟交易与 Live 实盘有什么区别？</h1><p class="post-deck">Paper 模式最适合观察程序的决策、状态和模拟结果，但它不等于真实订单测试。即便两个模式显示相同的方向，也不能据此推断利润相同。</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>Paper 能验证什么？</h2><p>Paper 可以帮助观察市场发现、数据完整性、决策与风险流程、日志以及模拟订单记录。它能暴露不少流程问题，但不能证明某个时刻一定存在足够流动性，也不能证明真实交易可按模拟价格成交。</p></section>
+<section class="guide-section"><h2>Live 多了哪些变量？</h2><p>Live 需要真实账户、授权与可用资金，还会遇到盘口变动、报价差、滑点、部分成交、手续费、订单拒绝、网络延迟与异常恢复问题。平台外部的真实订单状态必须以平台反馈为准。</p></section>
+<section class="guide-section"><h2>胜率和金额为什么不能直接比较？</h2><p>相同方向判断在不同成交价格下可能产生完全不同的盈亏。模拟的统计口径与历史标准化得分，不能当作已实现的真实货币收益。请一起关注成交率、执行成本、未成交与最坏风险。</p></section>
+<section class="guide-section"><h2>什么时候考虑切换 Live？</h2><p>没有万能的样本量阈值。至少应确认软件版本、市场规则、账户权限、状态与日志正常，明确风险预算与手动停止流程，并理解真实资金可能出现全部损失。Paper 表现良好不是实盘收益承诺。</p></section>
+    <section class="guide-summary"><h2>简要结论</h2><p>Paper 用于观察和验证流程；Live 测试的是真实成交和账户风险。它们有关联，但不是同一种证据。</p></section>
+    <p class="guide-disclaimer">本文用于技术与研究交流，不构成投资建议。产品设置和支持范围请以最新发行版本与 GitHub 官方仓库文档为准。</p>
+  </div>
+  <aside class="guide-links"><h2>继续了解</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/faq.md#q11-paper-模拟模式和-live-实盘模式有什么区别" target="_blank" rel="noopener noreferrer">产品模式 FAQ ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/quick-start.md" target="_blank" rel="noopener noreferrer">首次设置 ↗</a><a href="/guides/backtest-vs-live/">回测与实盘进一步比较 ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/questions/">查看全部常见问题 →</a></div>
+ </article>
+</main>

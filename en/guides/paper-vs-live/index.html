@@ -1,0 +1,23 @@
+---
+layout: default
+lang: en
+title: "Polymarket Paper Trading vs Live Execution | Naka Research"
+description: "Learn what paper trading can test, what changes with real orders, and why simulated PnL is not proof of live profitability."
+alternate_url: /guides/paper-vs-live/
+permalink: /en/guides/paper-vs-live/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">Practical guide / Naka Research</div><h1>Polymarket Paper Trading vs Live Execution</h1><p class="post-deck">Paper mode is useful for observing decisions, state, and simulated records, but it does not test actual market fills. Even identical directions need not produce identical results.</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>What does Paper mode validate?</h2><p>Paper mode can surface issues in market discovery, data integrity, decisions, risk checks, logging, and simulated order records. It cannot prove sufficient order-book liquidity or that simulated prices were executable.</p></section>
+<section class="guide-section"><h2>What changes in Live?</h2><p>Live mode adds actual accounts, permissions, and capital; spread, slippage, partial fills, fees, rejected orders, latency, and recovery become financially relevant. Verify real order state against the venue.</p></section>
+<section class="guide-section"><h2>Why not compare win rate or profit directly?</h2><p>A correct direction at a different fill price can produce a different outcome. Simulated PnL and standardized historical scores are not realized currency profits. Fill rates, execution costs, and downside exposure matter too.</p></section>
+<section class="guide-section"><h2>When should someone consider Live?</h2><p>There is no universal sample-count threshold. Verify release version, market eligibility, credentials, readiness, logs, and manual stop procedures; define capital-at-risk first. Good paper results cannot guarantee live profitability.</p></section>
+    <section class="guide-summary"><h2>The takeaway</h2><p>Paper verifies a simulated workflow. Live exposes execution and account risk. They are related but not equivalent evidence.</p></section>
+    <p class="guide-disclaimer">For technical education only, not financial advice. Confirm exact features and requirements in the latest software release and project documentation.</p>
+  </div>
+  <aside class="guide-links"><h2>Continue reading</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/en/faq.md#q11-whats-the-difference-between-paper-mode-and-live-mode" target="_blank" rel="noopener noreferrer">Paper vs Live FAQ ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/en/quick-start.md" target="_blank" rel="noopener noreferrer">Quick start ↗</a><a href="/en/guides/backtest-vs-live/">Backtests versus live execution ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/en/questions/">Explore all questions →</a></div>
+ </article>
+</main>

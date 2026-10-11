@@ -16,8 +16,6 @@ tags:
   - Strategy Stability
 ---
 
-# Why I Rejected a Strategy Change That Made the Backtest More Profitable
-
 The most dangerous result in quantitative research is not an obvious failure.
 
 It is:

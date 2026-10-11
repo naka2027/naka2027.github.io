@@ -17,8 +17,6 @@ tags:
   - Trading Bot
 ---
 
-# Why I Use Binance for BTC Signals and OKX for Execution
-
 A natural question in BTC futures research is:
 
 > If the final trade will happen on OKX, why not build the entire strategy using OKX data?

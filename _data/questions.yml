@@ -1,0 +1,131 @@
+- id: start
+  zh: 初次了解与选择工具
+  en: Getting Started & Choosing Tools
+  questions:
+  - id: q01
+    zh: Polymarket BTC 5分钟交易机器人是什么？
+    en: What is a Polymarket BTC 5-minute trading bot?
+    answer_zh: 它是围绕 Polymarket BTC 5 分钟 Up/Down 市场运行的软件系统；市场发现、行情检查、信号判断、风控与下单是不同环节。并不是“预测正确”就意味着能在可接受的价格成交。
+    answer_en: It is software operating around Polymarket BTC five-minute Up/Down markets. Market discovery, data checks, signal decisions,
+      risk controls, and order execution are separate steps. Predicting the direction does not guarantee a usable fill.
+    article_key: building-polymarket-btc5m-bot
+    github_faq_anchor_zh: q1-这是什么软件支持哪些市场
+    github_faq_anchor_en: q1-what-does-this-software-do-which-markets-does-it-support
+  - id: q02
+    zh: 有没有可以在 Windows 或 Linux VPS 上使用的自动交易工具？
+    en: Can a Polymarket trading bot run on Windows or a Linux VPS?
+    answer_zh: 有些工具提供 Windows 桌面安装和 Linux/VPS 自托管部署，支持方式与首次配置要求因产品而异。本站关联项目提供上述两类部署入口，但“软件已安装”不代表账户激活、数据准备或实盘条件已经完成；具体操作请以 GitHub 最新文档为准。
+    answer_en: Some tools support Windows desktop installation and self-hosted Linux/VPS deployment. Setup requirements vary. The linked
+      project provides both deployment paths, but installation alone does not mean activation, data readiness, or live-trading checks
+      are complete. Consult the latest GitHub docs.
+    article_key: null
+    github_faq_anchor_zh: q2-有-windows-版本吗可以部署在-linuxvps-上吗
+    github_faq_anchor_en: q2-is-there-a-windows-version-can-i-deploy-it-on-linux-or-a-vps
+    guide_slug: windows-linux
+  - id: q03
+    zh: 怎样判断一款 Polymarket 机器人是否值得信任？
+    en: How do I evaluate whether a Polymarket bot is trustworthy?
+    answer_zh: 先区分历史回测、模拟订单和真实成交，再检查凭据处理方式、权限、账户风险、软件来源、更新记录，以及是否说明费用、滑点和失效场景。不要把单一胜率截图视作盈利证明。
+    answer_en: Separate backtests, simulated orders, and actual fills. Check credential handling, permissions, account risks, software
+      provenance, updates, and whether costs, slippage, and failure scenarios are disclosed. A win-rate screenshot is not proof of realized
+      profits.
+    article_key: why-polymarket-bot-strategies-fail
+    github_faq_anchor_zh: q22-软件是否保管我的资金私钥和-api-key-存放在哪里
+    github_faq_anchor_en: q22-does-the-software-custody-my-funds-where-are-private-keys-and-api-keys-stored
+    guide_slug: evaluating-bot-safety
+- id: testing
+  zh: 回测、Paper 与实盘执行
+  en: Backtests, Paper & Live Execution
+  questions:
+  - id: q04
+    zh: 为什么回测很好，实盘表现却可能不同？
+    en: Why can a strong backtest differ from live trading?
+    answer_zh: 历史标签不等于真实可成交价格。盘口深度、订单响应、延迟、手续费、滑点、拒单和停止条件都可能改变结果；还需要检验回放是否与实际生产决策逐笔一致。
+    answer_en: Historical outcomes are not executable prices. Order-book depth, response times, latency, fees, slippage, rejected orders,
+      and stop conditions can change results. Production decisions also need trade-by-trade consistency checks.
+    article_key: polymarket-bot-replay-production-validation
+    github_faq_anchor_zh: q18-为什么历史回测或-paper-表现不错live-的结果仍可能不同
+    github_faq_anchor_en: q18-why-can-a-strong-backtest-or-paper-result-differ-from-live-execution
+    guide_slug: backtest-vs-live
+  - id: q05
+    zh: 为什么机器人胜率高仍然可能亏钱？
+    en: Why can a high-win-rate bot still lose money?
+    answer_zh: 预测市场的回报取决于成交价格、胜负结果和费用。即使胜率提高，如果买入成本过高，预期收益仍可能为负；回测胜率也不能替代可验证的实际成交记录。
+    answer_en: Prediction-market returns depend on fill prices, outcomes, and costs. A higher win rate can still produce negative expectancy
+      if entry is too expensive. Backtested win rates do not substitute for verifiable live fills.
+    article_key: polymarket-bot-win-rate-entry-price-expected-value
+    github_faq_anchor_zh: q19-胜率高就代表实际盈利吗
+    github_faq_anchor_en: q19-does-a-high-win-rate-guarantee-profitability
+  - id: q06
+    zh: Paper 模拟与 Live 实盘究竟有什么不同？
+    en: How does paper trading differ from live execution?
+    answer_zh: Paper 结果用于验证流程和观察模拟表现，并不证明真实订单一定能够按假设价格成交。Live 涉及真实账户、成交、成本、订单状态和资金风险；切换前应分别核实权限、风控和账户状态。
+    answer_en: Paper mode helps check workflow and simulated behavior but cannot prove that real orders will fill at assumed prices.
+      Live mode adds actual accounts, fills, costs, order state, and capital risk; permissions and safeguards must be checked independently.
+    article_key: polymarket-bot-entry-cost-near-market-open
+    github_faq_anchor_zh: q11-paper-模拟模式和-live-实盘模式有什么区别
+    github_faq_anchor_en: q11-whats-the-difference-between-paper-mode-and-live-mode
+    guide_slug: paper-vs-live
+  - id: q07
+    zh: 为什么自动交易机器人有时不下单？
+    en: Why does an automated trading bot sometimes make no trade?
+    answer_zh: 没有有效信号、数据不新鲜、状态尚未准备好、账户检查未通过或风险控制拒绝，都可能是不交易的正常原因。不能仅凭一段时间没有订单就判断系统失效，也不能把所有跳过都视为盈利优化。
+    answer_en: No qualifying signal, stale data, unready state, account checks, or risk controls may all explain a skipped trade. A
+      quiet period alone does not prove failure, and filtering trades does not inherently improve profitability.
+    article_key: why-polymarket-bot-needs-no-trade
+    github_faq_anchor_zh: q13-为什么机器人运行着却没有下单
+    github_faq_anchor_en: q13-why-is-the-bot-running-but-not-placing-orders
+- id: data
+  zh: 市场数据与结算
+  en: Market Data & Resolution
+  questions:
+  - id: q08
+    zh: Polymarket BTC 5分钟市场依据什么结算？
+    en: What determines the settlement of Polymarket BTC 5-minute markets?
+    answer_zh: 应以每个市场的官方规则和指定参考价格为准，不能直接假设 Binance K 线涨跌就等于 Polymarket 的最终 Up/Down 判定。研究回测时还需要核对时间窗口和数据口径。
+    answer_en: Use each market’s official rules and stated reference source, not the assumption that a Binance candle direction equals
+      a Polymarket Up/Down outcome. Historical studies also need consistent time windows and data definitions.
+    article_key: polymarket-btc-5m-resolution-source
+    github_faq_anchor_zh: q17-为什么-binance-行情与-polymarket-btc-5m-最终结算结果可能不一致
+    github_faq_anchor_en: q17-why-might-binance-price-action-differ-from-the-final-polymarket-btc-5m-result
+  - id: q09
+    zh: 为什么 Binance、Chainlink 和 Polymarket 的价格会不同？
+    en: Why do Binance, Chainlink and Polymarket prices differ?
+    answer_zh: 它们服务不同用途：交易所成交或行情、预言机参考数据、以及预测市场订单簿价格，不是可直接替换的同一数据列。比较之前必须说明时间点、资产定义、单位和采集延迟。
+    answer_en: 'They serve different purposes: exchange prices, oracle reference values, and prediction-market order-book prices. They
+      are not interchangeable data columns; timestamps, asset definitions, units, and acquisition delays matter.'
+    article_key: polymarket-chainlink-btc5m-research-difficulty
+    github_faq_anchor_zh: q17-为什么-binance-行情与-polymarket-btc-5m-最终结算结果可能不一致
+    github_faq_anchor_en: q17-why-might-binance-price-action-differ-from-the-final-polymarket-btc-5m-result
+  - id: q10
+    zh: 为什么不能简单地让 5 分钟策略提前运行？
+    en: Why not simply run a five-minute strategy earlier?
+    answer_zh: 越早执行通常意味着观察到的信息不同；信号判断、是否参与和可执行价格是独立问题。策略在原时间点的历史验证，不等于把时刻提前后仍然有效。
+    answer_en: Earlier action uses a different information set. Direction, participation, and executable price are separate questions.
+      Evidence for a strategy at one decision time does not prove its validity at an earlier time.
+    article_key: why-polymarket-bot-cannot-simply-run-earlier
+    github_faq_anchor_zh: q18-为什么历史回测或-paper-表现不错live-的结果仍可能不同
+    github_faq_anchor_en: q18-why-can-a-strong-backtest-or-paper-result-differ-from-live-execution
+- id: engineering
+  zh: 部署、安全与长期维护
+  en: Deployment, Safety & Long-Term Operation
+  questions:
+  - id: q11
+    zh: 怎样让自动化交易程序长期稳定运行？
+    en: How can an automated trading system run reliably over time?
+    answer_zh: 持续运行不只是启动进程。需要检查数据新鲜度、状态持久化、异常恢复、日志和真实账户中的挂单与仓位；升级前后还应检查版本、备份和迁移条件。
+    answer_en: Always-on operation is more than keeping a process alive. Monitor data freshness, persistent state, recovery, logs, and
+      real exchange orders and positions. Check versions, backups, and migration requirements when updating.
+    article_key: polynexus-maintainable-trading-system
+    github_faq_anchor_zh: q16-断网异常重启后软件会自动恢复到完全正确的交易状态吗
+    github_faq_anchor_en: q16-will-network-failures-or-abnormal-restarts-always-resolve-without-intervention
+  - id: q12
+    zh: 自托管机器人是否意味着绝对安全？
+    en: Does self-hosting make a trading bot completely safe?
+    answer_zh: 不意味着。自托管可以让凭据与程序部署在用户自己的环境，但仍需认真管理钱包/API 权限、备份、设备安全、访问控制和异常订单。软件不会代替用户消除市场风险。
+    answer_en: No. Self-hosting can keep the software and credentials under the user’s deployment, but wallet/API permissions, backups,
+      device security, access controls, and stray orders still require care. It cannot eliminate market risk.
+    article_key: null
+    github_faq_anchor_zh: q22-软件是否保管我的资金私钥和-api-key-存放在哪里
+    github_faq_anchor_en: q22-does-the-software-custody-my-funds-where-are-private-keys-and-api-keys-stored
+    guide_slug: evaluating-bot-safety

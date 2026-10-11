@@ -1,0 +1,24 @@
+---
+layout: default
+lang: en
+title: "How to Evaluate a Polymarket Trading Bot Safely | Naka Research"
+description: "A practical checklist covering provenance, keys, live-vs-paper evidence, operational failure cases and trading risk."
+alternate_url: /guides/evaluating-bot-safety/
+permalink: /en/guides/evaluating-bot-safety/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">Practical guide / Naka Research</div><h1>How to Evaluate a Polymarket Trading Bot Safely</h1><p class="post-deck">A good-looking win-rate chart is not where trust should begin. Separate whether a program runs, whether a historical test looks favorable, and whether real orders can be executed reliably.</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>1. Verify the software source</h2><p>Check the repository, version history, official releases, and any published integrity-verification steps. A publicly visible repository does not mean the full proprietary program or strategy is open source; verify the actual licensing terms.</p></section>
+<section class="guide-section"><h2>2. Understand custody and credentials</h2><p>Find out where private keys and API credentials are stored, where signing occurs, and who can access the dashboard. Self-hosting does not remove the risk of compromised devices, broad permissions, unintended orders, or lost backups. Never share seed phrases or secret keys.</p></section>
+<section class="guide-section"><h2>3. Separate backtests, paper and live fills</h2><p>These are three different evidence categories. Win rate must be considered alongside executable prices, fees, slippage, trade frequency, drawdown, and actual fill records. One screenshot is not long-term profitability evidence.</p></section>
+<section class="guide-section"><h2>4. Review failures and exit procedures</h2><p>Ask what happens after a network outage, restart, update, or shutdown. External orders and positions must be checked independently; closing a browser does not necessarily cancel orders.</p></section>
+<section class="guide-section"><h2>5. Check eligibility and endorsement</h2><p>Independent bots are not official Polymarket products. Verify your own eligibility to access the market and be cautious about any tool claiming to bypass account or geographic restrictions.</p></section>
+    <section class="guide-summary"><h2>The takeaway</h2><p>Trust requires verifiable facts about provenance, permissions, evidence quality, failure modes, and risk—not just a headline statistic.</p></section>
+    <p class="guide-disclaimer">For technical education only, not financial advice. Confirm exact features and requirements in the latest software release and project documentation.</p>
+  </div>
+  <aside class="guide-links"><h2>Continue reading</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/en/faq.md#q22-does-the-software-custody-my-funds-where-are-private-keys-and-api-keys-stored" target="_blank" rel="noopener noreferrer">Credentials and custody FAQ ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/en/operations-security.md" target="_blank" rel="noopener noreferrer">Operations and recovery ↗</a><a href="/en/guides/backtest-vs-live/">Backtest vs live guide ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/en/questions/">Explore all questions →</a></div>
+ </article>
+</main>

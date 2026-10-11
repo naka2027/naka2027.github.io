@@ -16,8 +16,6 @@ tags:
   - Backtesting
 ---
 
-# Why I Abandoned a Risk-Control Method That Made the Equity Curve Smoother
-
 There is one kind of backtest result that is very easy to like:
 
 > A smoother equity curve and a visibly lower drawdown.

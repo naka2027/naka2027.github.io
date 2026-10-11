@@ -5,6 +5,8 @@
       <p>{% if page.lang == 'en' %}Independent notes on prediction markets, quantitative research and automated execution.{% else %}记录预测市场、量化研究、回测与自动执行中的真实问题。{% endif %}</p>
     </div>
     <div class="footer-links">
+      <a href="{% if page.lang == 'en' %}/en/questions/{% else %}/questions/{% endif %}">{% if page.lang == 'en' %}Questions{% else %}问题解答{% endif %}</a>
+      <a href="{% if page.lang == 'en' %}/en/topics/{% else %}/topics/{% endif %}">{% if page.lang == 'en' %}Topics{% else %}研究专题{% endif %}</a>
       <a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       <a href="{% if page.lang == 'en' %}/en/articles/{% else %}/articles/{% endif %}">{% if page.lang == 'en' %}Research{% else %}研究文章{% endif %}</a>
       <a href="{% if page.lang == 'en' %}/en/about/{% else %}/about/{% endif %}">{% if page.lang == 'en' %}About{% else %}关于{% endif %}</a>

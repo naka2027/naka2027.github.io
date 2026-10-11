@@ -1,0 +1,24 @@
+---
+layout: default
+lang: en
+title: "Why Polymarket BTC 5m Backtests Can Differ from Live Trading | Naka Research"
+description: "An evidence-focused explanation of settlement labels, executable prices, data timing, selection bias, production replay and execution risk."
+alternate_url: /guides/backtest-vs-live/
+permalink: /en/guides/backtest-vs-live/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">Practical guide / Naka Research</div><h1>Why Polymarket BTC 5m Backtests Can Differ from Live Trading</h1><p class="post-deck">A correct historical direction and an executable market quote are different things. Strong backtest results still require price, data, validation, and production-execution checks.</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>Historical outcomes are not executable quotes</h2><p>A backtest may identify the settled outcome but real profitability depends on the order price, available depth, and actual fills. Final win/loss labels cannot establish that every historical trade was executable at an ideal price.</p></section>
+<section class="guide-section"><h2>Data time and resolution sources matter</h2><p>Binance market data, Chainlink references, and Polymarket order books serve different roles. Verify the market rule, reference source, time window, decision timestamp, and observed arrival time independently.</p></section>
+<section class="guide-section"><h2>Causal backtests can still overfit</h2><p>Avoiding look-ahead does not eliminate model-selection bias from repeatedly testing on the same history. Inspect stability across periods and market environments, and continue with genuine forward observation where possible.</p></section>
+<section class="guide-section"><h2>Does production reproduce research trade by trade?</h2><p>Matching aggregate win rates or scores is insufficient. Compare individual events, skip/stop states, readiness, and boundary decisions between production and replay.</p></section>
+<section class="guide-section"><h2>Execution has its own failure modes</h2><p>Partial fills, rejected orders, latency, liquidity gaps, fees, and account-state issues can make real trading diverge from research. Monitoring and recovery belong inside the trading system.</p></section>
+    <section class="guide-summary"><h2>The takeaway</h2><p>Backtesting supports limited historical claims, not guaranteed future returns or real executability. Data, validation, prices, and production behavior should be checked separately.</p></section>
+    <p class="guide-disclaimer">For technical education only, not financial advice. Confirm exact features and requirements in the latest software release and project documentation.</p>
+  </div>
+  <aside class="guide-links"><h2>Continue reading</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/en/faq.md#q18-why-can-a-strong-backtest-or-paper-result-differ-from-live-execution" target="_blank" rel="noopener noreferrer">Research vs live FAQ ↗</a><a href="/en/articles/polymarket-bot-replay-production-validation/">Production replay study ↗</a><a href="/en/articles/polymarket-bot-win-rate-entry-price-expected-value/">Win rate and entry costs ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/en/questions/">Explore all questions →</a></div>
+ </article>
+</main>

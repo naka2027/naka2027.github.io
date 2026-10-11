@@ -19,8 +19,6 @@ tags:
   - Execution Research
 ---
 
-# Why the Same BTC Strategy Behaves Differently on Binance and OKX
-
 A common assumption in BTC strategy research is:
 
 > If both markets are trading BTC at the same time, Binance and OKX prices should be close enough that it should not matter much where the signal is generated or where the trade is executed.

@@ -1,0 +1,24 @@
+---
+layout: default
+lang: zh
+title: "为什么 Polymarket 机器人回测很好，实盘却可能不同？ | Naka Research"
+description: "从历史结算标签、订单簿价格、执行延迟、样本偏差、生产代码一致性和市场变化解释回测与实盘差异。"
+alternate_url: /en/guides/backtest-vs-live/
+permalink: /guides/backtest-vs-live/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">实用指南 / Naka Research</div><h1>为什么 Polymarket 机器人回测很好，实盘却可能不同？</h1><p class="post-deck">“历史方向正确”和“真实市场有可成交的报价”是两个不同问题。回测看起来稳定，仍然需要审查价格、数据、策略验证方式以及生产执行条件。</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>历史标签不是成交报价</h2><p>回测可能准确判断了市场最终结果，但实际利润还取决于下单当时的价格、可用深度和实际成交。不能仅用标记的胜负结果反推任何时刻都可以按理想价格成交。</p></section>
+<section class="guide-section"><h2>数据时间与结算来源不能混用</h2><p>Binance 行情、Chainlink 参考数据与 Polymarket 订单簿服务于不同目的。交易窗口、最终市场规则、观察时点以及数据到达时间必须分别核实。</p></section>
+<section class="guide-section"><h2>回测正确仍可能过拟合</h2><p>即使没有偷看未来，也可能因为在同一份历史数据上不断选取方案而产生选择偏差。建议检验跨年份、月份、不同市场环境的表现，并在未用于开发的窗口或真实前向数据中继续观察。</p></section>
+<section class="guide-section"><h2>生产代码是否逐笔复现研究？</h2><p>仅比较总胜率或总分不足以证明一致。生产逻辑与研究回放需要按事件核对信号、跳过、停止、状态准备和边界时间点的决策。</p></section>
+<section class="guide-section"><h2>真实执行还有额外的失败模式</h2><p>订单部分成交、拒单、网络中断、费用、盘口跳动以及账户状态问题，都可能使实际交易偏离历史研究。实际系统应重视监控和异常恢复，而不是将执行视为策略之外的小细节。</p></section>
+    <section class="guide-summary"><h2>简要结论</h2><p>一份回测可以支持有限的历史研究结论，但不能单独证明未来收益或真实可执行性；应把数据定义、验证方法、成本和生产执行分开核对。</p></section>
+    <p class="guide-disclaimer">本文用于技术与研究交流，不构成投资建议。产品设置和支持范围请以最新发行版本与 GitHub 官方仓库文档为准。</p>
+  </div>
+  <aside class="guide-links"><h2>继续了解</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/faq.md#q18-为什么历史回测或-paper-表现不错live-的结果仍可能不同" target="_blank" rel="noopener noreferrer">历史与 Live 的差异 FAQ ↗</a><a href="/articles/polymarket-bot-replay-production-validation/">生产代码逐笔一致性研究 ↗</a><a href="/articles/polymarket-bot-win-rate-entry-price-expected-value/">胜率与买入成本研究 ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/questions/">查看全部常见问题 →</a></div>
+ </article>
+</main>

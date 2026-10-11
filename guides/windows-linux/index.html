@@ -1,0 +1,23 @@
+---
+layout: default
+lang: zh
+title: "Polymarket BTC 5m Bot：Windows 与 Linux/VPS 怎么选？ | Naka Research"
+description: "比较 Windows 桌面安装与 Linux/VPS 自托管的适用场景、前置条件和首次启动检查。"
+alternate_url: /en/guides/windows-linux/
+permalink: /guides/windows-linux/
+---
+<main id="main-content" class="guide-page post-page">
+ <article class="shell-narrow post">
+  <header class="post-header"><div class="kicker">实用指南 / Naka Research</div><h1>Polymarket BTC 5m Bot：Windows 与 Linux/VPS 怎么选？</h1><p class="post-deck">如果你正在寻找可以自己部署的 Polymarket BTC 5m 自动交易工具，先确认的是运行环境、配置责任和安全边界，而不是直接打开 Live 模式。</p></header>
+  <div class="post-body guide-body">
+    <section class="guide-section"><h2>Windows 更适合哪些人？</h2><p>Windows 桌面版适合希望直接通过本地界面查看状态和配置的用户。公开发行包面向 Windows 10/11 64 位，无需自己编译专有程序，但仍需下载安装包、完成授权激活、配置账户并验证市场数据。</p></section>
+<section class="guide-section"><h2>Linux/VPS 的优势与额外责任</h2><p>Linux/VPS 适合希望长期运行和远程维护的用户。仓库提供云端部署流程，但你仍需要基本的 SSH、服务器、网络、域名/HTTPS 和备份知识。不要将部署脚本启动成功理解为已经具备安全实盘下单的条件。</p></section>
+<section class="guide-section"><h2>实际开始前应检查什么？</h2><p>先确认发行版本支持的系统、当前地区的平台可用性、网络连通性、可用存储和系统时间同步。然后依照 GitHub 快速开始完成激活、必要的数据状态准备及 Paper 模拟验证；尤其要检查当前配置、订单记录和日志是否与预期一致。</p></section>
+<section class="guide-section"><h2>软件怎么更新？</h2><p>以具体 Release 与部署文档为准。更新前停止自动化并确认外部挂单、仓位与订单状态，再按文档备份配置、数据库及云端主密钥。任何自动更新功能都不能代替关键状态校验。</p></section>
+    <section class="guide-summary"><h2>简要结论</h2><p>Windows 更方便进行桌面交互；Linux/VPS 方便持续运行，但额外增加服务器安全、运维和备份责任。两者都应先完成 Paper 检查。</p></section>
+    <p class="guide-disclaimer">本文用于技术与研究交流，不构成投资建议。产品设置和支持范围请以最新发行版本与 GitHub 官方仓库文档为准。</p>
+  </div>
+  <aside class="guide-links"><h2>继续了解</h2><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/deployment.md" target="_blank" rel="noopener noreferrer">最新安装与部署文档 ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/quick-start.md" target="_blank" rel="noopener noreferrer">首次启动与配置清单 ↗</a><a href="https://github.com/naka2027/polymarket-bot/blob/main/docs/zh-CN/faq.md#q2-有-windows-版本吗可以部署在-linuxvps-上吗" target="_blank" rel="noopener noreferrer">GitHub 软件 FAQ ↗</a></aside>
+  <div class="post-end"><a class="inline-link" href="/questions/">查看全部常见问题 →</a></div>
+ </article>
+</main>

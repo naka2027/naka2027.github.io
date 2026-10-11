@@ -16,8 +16,6 @@ tags:
   - Automated Trading
 ---
 
-# High Leverage Is Not Just Multiplying Position Size by 10
-
 When a trading system says:
 
 **5x / 10x / 20x**

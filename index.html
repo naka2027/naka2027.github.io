@@ -5,52 +5,42 @@ title: "Polymarket 机器人研究 | BTC 5分钟自动交易、回测与策略�
 description: "独立记录 Polymarket 机器人、BTC 5分钟自动交易、策略回测、过拟合、STOP、风控与生产代码验证。公开研究过程，不公开策略配方。"
 alternate_url: /en/
 ---
-<main>
-  <section class="hero">
-    <div class="shell hero-grid">
-      <div class="hero-copy">
-        <div class="kicker">Prediction markets / quant research</div>
-        <h1>Polymarket 机器人研究，<em>不是收益展示页。</em></h1>
-        <p class="hero-intro">从 BTC 5分钟市场出发，公开记录策略为什么被相信、为什么被否定，以及回测与真实执行之间还差什么。</p>
-        <p class="hero-principle">公开研究过程，不公开策略配方。</p>
-        <div class="hero-actions">
-          <a class="button dark" href="/articles/">阅读研究</a>
-          <a class="button light" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub 项目 ↗</a>
-        </div>
-      </div>
-      <div class="snapshot">
-        <div class="snapshot-head">
-          <div><span class="snapshot-label">Published research snapshot</span><strong>BTC 5m / 2021–2026</strong></div>
-          <span class="snapshot-badge">PUBLIC</span>
-        </div>
-        <div class="signal-field" aria-hidden="true">
-          <svg viewBox="0 0 540 230">
-            <path class="chart-grid" d="M0 46H540 M0 92H540 M0 138H540 M0 184H540"/>
-            <path class="chart-area" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48 L540,230 L0,230 Z"/>
-            <path class="chart-line" d="M0,192 C30,185 55,162 84,172 C118,184 130,142 164,151 C198,160 216,123 248,133 C282,142 298,101 333,110 C366,120 383,78 418,91 C455,104 474,57 506,69 C521,74 531,57 540,48"/>
-          </svg>
-        </div>
-        <div class="snapshot-stats">
-          <div><strong>18,633</strong><span>historical signals</span></div>
-          <div><strong>63.75%</strong><span>executed win rate*</span></div>
-          <div><strong>8</strong><span>longest loss streak</span></div>
-        </div>
-        <p class="snapshot-note">* 2026-09-01 公开历史回放快照。标准化研究结果，不等于实盘收益。</p>
-      </div>
-    </div>
-  </section>
+<main id="main-content" class="home-v12">
+  {% assign localized_posts = site.posts | where: "lang", "zh" %}
 
-  <section class="thesis-strip">
-    <div class="shell thesis-grid">
-      <span>01 / SIGNAL</span><p>一个方向判断只是候选，不是订单。</p>
-      <span>02 / VALIDATION</span><p>没有偷看未来，也不代表没有过拟合。</p>
-      <span>03 / EXECUTION</span><p>历史方向正确，不代表真实价格一定可成交。</p>
-    </div>
-  </section>
-
+<section class="home-v12-hero" aria-labelledby="home-heading">
+<div class="shell home-v12-hero-grid">
+<div class="home-v12-intro">
+  <div class="kicker">INDEPENDENT RESEARCH / BTC 5-MINUTE MARKETS</div>
+  <h1 id="home-heading">理解 Polymarket BTC 5 分钟市场，<em>从数据到真实执行。</em></h1>
+  <p class="home-v12-lead">这里记录真实的量化研究与自动化工程实践：市场如何结算、历史回测怎样验证、信号如何变成真实订单，以及长期运行的软件会遇到什么问题。</p>
+  <div class="home-v12-identity"><span>独立研究</span><span>中文 / English</span><span>公开方法与边界</span></div>
+  <div class="hero-actions"><a class="button dark" href="#latest-research">阅读最新研究 ↓</a><a class="button light" href="/questions/">按问题查找 ↗</a><a class="button light" href="/project/">了解项目 ↗</a></div>
+</div>
+<aside class="home-v12-desk" aria-label="精选研究与资料">
+  <div class="home-v12-desk-head"><span>NAKA / RESEARCH DESK</span><span>精选阅读 · 01</span></div>
+  <div class="home-v12-desk-main"><div class="home-v12-issue">EDITOR'S PICK <span>↗</span></div>
+    <a class="home-v12-spotlight-title" href="/articles/polymarket-bot-win-rate-entry-price-expected-value/">胜率高就一定赚钱吗？<br>入场价格可能比胜率更重要。</a>
+    <p>从用户最容易误解的一项指标出发，看价格、成交与实际结果之间的区别。</p>
+    <a class="home-v12-spotlight-link" href="/articles/polymarket-bot-win-rate-entry-price-expected-value/">阅读这篇研究 →</a>
+  </div>
+  <div class="home-v12-desk-bottom"><a href="/articles/polymarket-btc-5m-resolution-source/">结算依据不是交易所 K 线 <span>↗</span></a><a href="/articles/polymarket-bot-replay-production-validation/">回测与生产代码怎样逐笔核对 <span>↗</span></a></div>
+  <div class="home-v12-stats"><div><b>{{ localized_posts.size }}</b><span>篇中文研究</span></div><div><b>04</b><span>研究专题</span></div><div><b>ZH / EN</b><span>双语内容</span></div></div>
+</aside>
+</div>
+</section>
+<section class="home-v12-questions" aria-labelledby="home-questions-heading"><div class="shell">
+  <div class="home-v12-section-mini"><div><div class="kicker">START WITH A QUESTION</div><h2 id="home-questions-heading">你正在寻找什么答案？</h2><p>不必先了解项目名称。先从一个真实问题进入，再选择阅读深度。</p></div><a href="/questions/" class="inline-link">全部问题解答 ↗</a></div>
+  <div class="home-v12-question-grid">
+    <a href="/questions/#start"><span>01 / GET STARTED</span><strong>机器人是什么，如何开始使用？</strong><small>使用范围 · Windows / Linux · 安装入口</small><i>↗</i></a>
+    <a href="/questions/#testing"><span>02 / VALIDATION</span><strong>为什么回测和实盘可能不同？</strong><small>价格 · 成交 · 风险 · 研究验证</small><i>↗</i></a>
+    <a href="/questions/#data"><span>03 / MARKET DATA</span><strong>BTC 5m 的数据和结算依据是什么？</strong><small>Binance · Chainlink · Polymarket</small><i>↗</i></a>
+    <a href="/topics/#engineering"><span>04 / ENGINEERING</span><strong>自动化系统如何长期运行？</strong><small>部署 · 更新 · 故障恢复</small><i>↗</i></a>
+  </div>
+</div></section>
   {% assign zh_posts = site.posts | where: "lang", "zh" %}
   {% assign featured = zh_posts.first %}
-  <section class="section articles-section">
+  <section class="section articles-section" id="latest-research">
     <div class="shell">
       <div class="section-title-row"><div><div class="kicker">Latest research</div><h2>最近研究</h2></div><a href="/articles/" class="inline-link">全部文章 →</a></div>
       {% if featured %}
@@ -68,7 +58,19 @@ alternate_url: /en/
     </div>
   </section>
 
-  <section class="project-section">
+
+  <section class="home-v12-topics" aria-labelledby="home-topics-heading"><div class="shell">
+    <div class="section-title-row"><div><div class="kicker">THE RESEARCH LIBRARY</div><h2 id="home-topics-heading">按主题探索，不错过你真正关心的研究</h2><p class="home-v12-topic-intro">不同于按时间浏览，这里将现有文章整理为可连续阅读的研究路线。</p></div><a class="inline-link" href="/topics/">查看专题 →</a></div>
+    <div class="home-v12-topic-grid">
+      {% for topic in site.data.topics %}
+      <a href="/topics/#{{ topic.id }}"><span class="home-v12-topic-top">0{{ forloop.index }} / {{ topic.id | upcase }}</span>
+      <h3>{{ topic.zh }}</h3><p>{{ topic.summary_zh }}</p>
+      <span class="home-v12-topic-bottom">{{ topic.posts.size }} 篇文章 <i>↗</i></span></a>
+      {% endfor %}
+    </div>
+  </div></section>
+
+  <section class="project-section" id="project-overview">
     <div class="shell project-layout">
       <div class="project-copy">
         <div class="kicker inverse">Featured project</div>
@@ -76,12 +78,7 @@ alternate_url: /en/
         <p>围绕 Polymarket BTC 5分钟 Up / Down 市场构建的自动化交易系统。公开高层研究方法、历史回放和风险边界；核心策略公式与参数保持私有。</p>
         <div class="project-actions"><a class="button white" href="/project/">项目说明</a><a class="button ghost" href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
       </div>
-      <div class="project-ledger">
-        <div><span>18,285</span><small>Executed historical orders</small></div>
-        <div><span>348</span><small>STOP decisions</small></div>
-        <div><span>-72</span><small>Max standardized drawdown</small></div>
-        <div><span>61</span><small>Positive monthly score buckets</small></div>
-      </div>
+      <div class="project-ledger project-links"><a href="/questions/#start"><strong>产品是什么？</strong><small>了解功能和适用范围</small></a><a href="/questions/#testing"><strong>真实执行问题</strong><small>Paper、Live 与风险</small></a><a href="/topics/#validation"><strong>研究如何验证？</strong><small>回测与可靠性</small></a><a href="/topics/#engineering"><strong>工程与维护</strong><small>部署、更新和恢复</small></a></div>
     </div>
   </section>
 
